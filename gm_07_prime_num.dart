@@ -1,22 +1,31 @@
+List<int> divisible = [];
+
 bool isPrime(int n) {
   if (n <= 1) {
     return false;
   }
 
-  // A prime num has only 2 factors:
-  int count = 0;
-
   for (int i = 1; i <= n; i++) {
     if (n % i == 0) {
-      count++;
+      divisible.add(i);
     }
   }
 
-  return count == 2;
+  print(divisible);
+
+  return divisible.every((element) {
+    if (element == 1 || element == n) {
+      return true;
+    }
+
+    return false;
+  });
 }
 
 void main() {
-  int num = 9;
+  int num = 11;
+
   bool result = isPrime(num);
+
   print(result);
 }
