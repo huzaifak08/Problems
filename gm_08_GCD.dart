@@ -40,6 +40,6 @@ void main() {
   int result = greatestCommonDivisor(a, b);
   print(result);
 
-  int optResult = greatestCommonDivisor(a, b);
+  int optResult = greatestCommonDivisorOpt(a, b);
   print("OPT- RESULT: $optResult");
 }
