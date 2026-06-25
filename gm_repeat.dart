@@ -7,7 +7,27 @@ int factorial(int n) {
   return result;
 }
 
+List<int> fibonacci(int n) {
+  List<int> result = [0];
+
+  if (n < 0 || n == 0 || n == 1) {
+    return result;
+  } else if (n == 2) {
+    return result = [0, 1];
+  } else {
+    result = [0, 1];
+    for (int i = 2; i < n; i++) {
+      int temp = result[i - 2] + result[i - 1];
+      result.add(temp);
+    }
+  }
+
+  return result;
+}
+
 void main() {
-  int result = factorial(6);
-  print(result);
+  // int factorialResult = factorial(6);
+
+  List<int> fibonacciResult = fibonacci(7);
+  print(fibonacciResult);
 }
