@@ -1,3 +1,5 @@
+import 'dart:math';
+
 int factorial(int n) {
   int result = n;
   for (int i = 0; i < n; i++) {
@@ -39,11 +41,28 @@ bool isPrime(int n) {
   return false;
 }
 
+int greatestCommonDivisor(int a, int b) {
+  int result = 0;
+
+  int length = min(a, b);
+  for (int i = 1; i <= length; i++) {
+    if ((a % i == 0) && (b % i == 0)) {
+      if (result < i) {
+        result = i;
+      }
+    }
+  }
+
+  return result;
+}
+
 void main() {
   // int factorialResult = factorial(6);
 
   // List<int> fibonacciResult = fibonacci(7);
 
-  bool primeResult = isPrime(10);
-  print(primeResult);
+  // bool primeResult = isPrime(10);
+
+  int gcdResult = greatestCommonDivisor(20, 50);
+  print(gcdResult);
 }
