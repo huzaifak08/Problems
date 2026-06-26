@@ -25,9 +25,25 @@ List<int> fibonacci(int n) {
   return result;
 }
 
+bool isPrime(int n) {
+  int count = 0;
+  for (int i = 1; i <= n; i++) {
+    if (n % i == 0) {
+      count++;
+    }
+  }
+
+  if (count == 2) {
+    return true;
+  }
+  return false;
+}
+
 void main() {
   // int factorialResult = factorial(6);
 
-  List<int> fibonacciResult = fibonacci(7);
-  print(fibonacciResult);
+  // List<int> fibonacciResult = fibonacci(7);
+
+  bool primeResult = isPrime(10);
+  print(primeResult);
 }
