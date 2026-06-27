@@ -56,6 +56,17 @@ int greatestCommonDivisor(int a, int b) {
   return result;
 }
 
+int sumOfAllDigits(int n) {
+  int result = 0;
+  while (n > 0) {
+    int reminder = n % 10;
+    result = result + reminder;
+    n = n ~/ 10;
+  }
+
+  return result;
+}
+
 void main() {
   // int factorialResult = factorial(6);
 
@@ -63,6 +74,8 @@ void main() {
 
   // bool primeResult = isPrime(10);
 
-  int gcdResult = greatestCommonDivisor(20, 50);
-  print(gcdResult);
+  // int gcdResult = greatestCommonDivisor(20, 50);
+
+  int sumResult = sumOfAllDigits(111);
+  print(sumResult);
 }
