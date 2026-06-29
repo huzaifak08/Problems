@@ -67,6 +67,43 @@ int sumOfAllDigits(int n) {
   return result;
 }
 
+int factorialAgain(int n) {
+  int result = n;
+  for (int i = 1; i < n; i++) {
+    result = result * (n - i);
+  }
+
+  return result;
+}
+
+List<int> fibonacciAgain(int n) {
+  if (n == 0 || n == 1) {
+    return [0];
+  } else if (n == 2) {
+    return [0, 1];
+  } else {
+    List<int> result = [0, 1];
+
+    for (int i = 0; i < (n - 2); i++) {
+      int temp = result[i] + result[i + 1];
+      result.add(temp);
+    }
+
+    return result;
+  }
+}
+
+int sumOfAllDigitsAgain(int n) {
+  int result = 0;
+
+  while (n > 0) {
+    int reminder = n % 10;
+    result = result + reminder;
+    n = n ~/ 10;
+  }
+  return result;
+}
+
 void main() {
   // int factorialResult = factorial(6);
 
@@ -76,6 +113,12 @@ void main() {
 
   // int gcdResult = greatestCommonDivisor(20, 50);
 
-  int sumResult = sumOfAllDigits(111);
-  print(sumResult);
+  // int sumResult = sumOfAllDigits(111);
+
+  // int factorialAgainResult = factorialAgain(4);
+
+  // List<int> fibonacciAgainResult = fibonacciAgain(13);
+
+  int sumAgainResult = sumOfAllDigitsAgain(345);
+  print(sumAgainResult);
 }
